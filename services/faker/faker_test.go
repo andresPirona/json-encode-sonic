@@ -26,9 +26,6 @@ func BenchmarkJSONEncode(b *testing.B) {
 	// init repo /// provider JSON ENCODE
 	repoFaker := NewFakerJsonImplementation(JsonEncode)
 
-	b.ResetTimer()
-	b.ReportAllocs()
-
 	for _, v := range input {
 		fakers := BuildFakerSlice(v)
 		b.Run(fmt.Sprintf("tamaño_%d", v), func(b *testing.B) {
